@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
+import InputComponent from '../components/InputComponent.tsx';
+
 export default function MainScreen() {
   const [data, setData] = useState([]);
 
   return (
     <View style={styles.container}>
-      <Text>
-        This is main screen.
-      </Text>
+      <InputComponent />
     </View>
   );
 }
