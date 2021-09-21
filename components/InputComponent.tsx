@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
 
-export default function InputComponent() {
+export default function InputComponent({addTaskHandler}) {
   const [input, setInput] = useState('');
 
   return (
@@ -16,7 +16,7 @@ export default function InputComponent() {
         <TouchableOpacity
           style={styles.addButton}
           onPress={() => {
-            alert('button clicked')
+            setInput(addTaskHandler(input))
             setInput(null)
           }}
         >
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
   },
   component: {
     flexDirection: 'row',
+    padding: 60,
     justifyContent: 'space-around',
-    justifyContent: 'center',
     alignItems: 'center',
   },
   input: {
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffdf',
+    marginLeft: 100,
     marginBottom: 20,
     borderRadius: 60,
   },

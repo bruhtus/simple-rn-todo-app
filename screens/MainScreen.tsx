@@ -1,14 +1,33 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, FlatList} from 'react-native';
 
 import InputComponent from '../components/InputComponent.tsx';
+import TaskList from '../components/TaskList.tsx';
 
 export default function MainScreen() {
   const [data, setData] = useState([]);
 
+  const addTaskHandler = (value) => {
+    setData((prevTask) => {
+      return [
+        {
+          value: value,
+          key: Math.random().toString(),
+        },
+        ...prevTask,
+      ];
+    });
+  };
+
   return (
     <View style={styles.container}>
-      <InputComponent />
+      <FlatList
+        data={data}
+        renderItem={({item}) => (
+          <TaskList item={item} />
+        )}
+      />
+      <InputComponent addTaskHandler={addTaskHandler} />
     </View>
   );
 }
@@ -17,6 +36,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: '100%',
-    alignItems: 'center'
+    marginTop: 30,
   },
 });
