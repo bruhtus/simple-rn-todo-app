@@ -8,7 +8,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor='#171717'
+        backgroundColor='#ffffdf'
         barStyle='light-content'
       />
       <MainScreen />
@@ -19,5 +19,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#171717',
   },
 });
