@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 20,
     borderRadius: 60,
+    borderColor: '#171717',
+    borderWidth: 2,
   },
   addButton: {
     width: 60,
@@ -66,5 +68,7 @@ const styles = StyleSheet.create({
     marginLeft: 100,
     marginBottom: 20,
     borderRadius: 60,
+    borderColor: '#171717',
+    borderWidth: 2,
   },
 });
