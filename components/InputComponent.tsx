@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
 
+import { AntDesign } from '@expo/vector-icons';
+
 export default function InputComponent({addTaskHandler}) {
   const [input, setInput] = useState('');
 
@@ -20,6 +22,12 @@ export default function InputComponent({addTaskHandler}) {
             setInput(null)
           }}
         >
+          <View>
+            <AntDesign
+              name='plus'
+              style={{fontSize: 20}}
+            />
+          </View>
         </TouchableOpacity>
       </View>
     </View>
