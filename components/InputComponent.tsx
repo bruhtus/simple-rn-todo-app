@@ -10,12 +10,14 @@ export default function InputComponent() {
         <TextInput
           style={styles.input}
           placeholder='Write a task here'
-          onChangeText={(newInput) => setValue(newInput)}
+          value={input}
+          onChangeText={(newInput) => setInput(newInput)}
           />
         <TouchableOpacity
           style={styles.addButton}
           onPress={() => {
             alert('button clicked')
+            setInput(null)
           }}
         >
         </TouchableOpacity>
