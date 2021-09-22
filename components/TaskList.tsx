@@ -28,7 +28,6 @@ export default function TaskList({item, deleteTaskHandler}) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ffffdf',
-    alignItems: 'center',
     margin: 10,
     borderRadius: 20,
     flexDirection: 'row',
