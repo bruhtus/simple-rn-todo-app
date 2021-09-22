@@ -11,16 +11,16 @@ export default function TaskList({item, deleteTaskHandler}) {
           {item.value}
         </Text>
       </View>
-      <TouchableOpacity
-        onPress={() => deleteTaskHandler(item.key)}
-      >
-        <View style={styles.deleteButton}>
+      <View style={styles.deleteButton}>
+        <TouchableOpacity
+          onPress={() => deleteTaskHandler(item.key)}
+        >
           <AntDesign
             name='delete'
             style={{fontSize: 25, color: '#9b1300'}}
           />
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -38,12 +38,11 @@ const styles = StyleSheet.create({
     padding: 15,
     flexDirection: 'row',
     alignItems: 'center',
-    flexWrap: 'wrap',
   },
   deleteButton: {
     width: 25,
     height: 25,
-    marginRight: 20,
-    justifyContent: 'center',
+    marginLeft: '90%',
+    position: 'absolute',
   },
 });
