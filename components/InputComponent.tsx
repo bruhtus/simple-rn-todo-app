@@ -1,5 +1,10 @@
-import React, {useState} from 'react';
-import {StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  TouchableOpacity
+} from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
 

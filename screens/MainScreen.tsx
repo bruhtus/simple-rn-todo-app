@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {StyleSheet, View, Text, FlatList} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 
 import InputComponent from '../components/InputComponent.tsx';
 import TaskList from '../components/TaskList.tsx';
