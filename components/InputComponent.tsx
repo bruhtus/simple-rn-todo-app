@@ -16,7 +16,7 @@ export default function InputComponent({addTaskHandler}) {
       <View style={styles.component}>
         <TextInput
           style={styles.input}
-          placeholder='Write a task here'
+          placeholder='Type a task here'
           value={input}
           onChangeText={(newInput) => setInput(newInput)}
           />
