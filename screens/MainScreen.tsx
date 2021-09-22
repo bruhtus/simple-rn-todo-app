@@ -20,6 +20,7 @@ export default function MainScreen() {
         {
           value: value,
           key: Math.random().toString(),
+          complete: false,
         },
         ...prevTask,
       ];
@@ -32,15 +33,25 @@ export default function MainScreen() {
     });
   };
 
+  // ref: https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/13-complete-items/complete-items.html
+  const completeTaskHandler = (key) => {
+    setData(data.map((task) => {
+      return task.key == key ? {...task, complete: !task.complete} : task;
+    }));
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         ListEmptyComponent={() => <EmptyComponent />}
         renderItem={({item}) => (
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => completeTaskHandler(item.key)}
+          >
             <TaskList
               item={item}
+              complete={item.complete}
               deleteTaskHandler={deleteTaskHandler}
             />
           </TouchableOpacity>

@@ -8,13 +8,32 @@ import {
 
 import { AntDesign } from '@expo/vector-icons';
 
-export default function TaskList({item, deleteTaskHandler}) {
+export default function TaskList({item, complete, deleteTaskHandler}) {
   return (
     <View style={styles.container}>
       <View style={styles.item}>
-        <Text>
-          {item.value}
-        </Text>
+        { complete == false ?
+          <View style={styles.completeButton}>
+            <AntDesign
+              name='right'
+              style={{ fontSize: 25, color: '#171717' }}
+            />
+          </View> :
+          <View style={styles.completeButton}>
+            <AntDesign
+              name='check'
+              style={{ fontSize: 25, color: '#006f00' }}
+            />
+          </View>
+        }
+        { complete == false ?
+          <Text>
+            {item.value}
+          </Text> :
+          <Text style={{textDecorationLine: 'line-through'}}>
+            {item.value}
+          </Text>
+        }
       </View>
       <View style={styles.deleteButton}>
         <TouchableOpacity
@@ -49,5 +68,8 @@ const styles = StyleSheet.create({
     height: 25,
     marginLeft: '90%',
     position: 'absolute',
+  },
+  completeButton: {
+    marginRight: '10%',
   },
 });
