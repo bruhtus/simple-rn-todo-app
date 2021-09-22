@@ -22,7 +22,7 @@ export default function MainScreen() {
 
   const deleteTaskHandler = (key) => {
     setData((prevTask) => {
-      return prevTask.filter((todo) => todo.key != key);
+      return prevTask.filter((task) => task.key != key);
     });
   };
 
