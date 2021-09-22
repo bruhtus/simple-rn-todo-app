@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, FlatList } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity
+} from 'react-native';
 
 import TaskList from '../components/TaskList.tsx';
 import InputComponent from '../components/InputComponent.tsx';
@@ -32,10 +38,12 @@ export default function MainScreen() {
         data={data}
         ListEmptyComponent={() => <EmptyComponent />}
         renderItem={({item}) => (
-          <TaskList
-            item={item}
-            deleteTaskHandler={deleteTaskHandler}
-          />
+          <TouchableOpacity>
+            <TaskList
+              item={item}
+              deleteTaskHandler={deleteTaskHandler}
+            />
+          </TouchableOpacity>
         )}
       />
       <InputComponent addTaskHandler={addTaskHandler} />
