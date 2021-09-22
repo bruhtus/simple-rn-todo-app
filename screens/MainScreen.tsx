@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 
-import InputComponent from '../components/InputComponent.tsx';
 import TaskList from '../components/TaskList.tsx';
+import InputComponent from '../components/InputComponent.tsx';
+import EmptyComponent from '../components/EmptyComponent.tsx';
 
 export default function MainScreen() {
   const [data, setData] = useState([]);
@@ -29,6 +30,7 @@ export default function MainScreen() {
     <View style={styles.container}>
       <FlatList
         data={data}
+        ListEmptyComponent={() => <EmptyComponent />}
         renderItem={({item}) => (
           <TaskList
             item={item}
