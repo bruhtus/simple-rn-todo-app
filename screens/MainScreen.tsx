@@ -19,12 +19,21 @@ export default function MainScreen() {
     });
   };
 
+  const deleteTaskHandler = (key) => {
+    setData((prevTask) => {
+      return prevTask.filter((todo) => todo.key != key);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         renderItem={({item}) => (
-          <TaskList item={item} />
+          <TaskList
+            item={item}
+            deleteTaskHandler={deleteTaskHandler}
+          />
         )}
       />
       <InputComponent addTaskHandler={addTaskHandler} />

@@ -1,7 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
-export default function TaskList({item}) {
+import { AntDesign } from '@expo/vector-icons';
+
+export default function TaskList({item, deleteTaskHandler}) {
   return (
     <View style={styles.container}>
       <View style={styles.item}>
@@ -9,6 +11,16 @@ export default function TaskList({item}) {
           {item.value}
         </Text>
       </View>
+      <TouchableOpacity
+        onPress={() => deleteTaskHandler(item.key)}
+      >
+        <View style={styles.deleteButton}>
+          <AntDesign
+            name='delete'
+            style={{fontSize: 25, color: '#9b1300'}}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -28,5 +40,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     flexWrap: 'wrap',
+  },
+  deleteButton: {
+    width: 25,
+    height: 25,
+    marginRight: 20,
+    justifyContent: 'center',
   },
 });
