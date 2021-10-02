@@ -1,18 +1,21 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Text } from 'react-native';
 
 export default function EmptyComponent() {
   let today = new Date().toISOString().slice(0, 10);
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
       <Text style={styles.text}>
         Nothing to do, relax!
       </Text>
       <Text style={styles.text}>
         {today}
       </Text>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
