@@ -4,7 +4,7 @@ import {
   View,
   Text,
   FlatList,
-  TouchableOpacity
+  Pressable
 } from 'react-native';
 
 import TaskList from '../components/TaskList.tsx';
@@ -46,7 +46,7 @@ export default function MainScreen() {
         data={data}
         ListEmptyComponent={() => <EmptyComponent />}
         renderItem={({item}) => (
-          <TouchableOpacity
+          <Pressable
             onPress={() => completeTaskHandler(item.key)}
           >
             <TaskList
@@ -54,7 +54,7 @@ export default function MainScreen() {
               complete={item.complete}
               deleteTaskHandler={deleteTaskHandler}
             />
-          </TouchableOpacity>
+          </Pressable>
         )}
       />
       <InputComponent addTaskHandler={addTaskHandler} />

@@ -3,7 +3,7 @@ import {
   StyleSheet,
   View,
   TextInput,
-  TouchableOpacity
+  Pressable
 } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
@@ -20,7 +20,7 @@ export default function InputComponent({addTaskHandler}) {
           value={input}
           onChangeText={(newInput) => setInput(newInput)}
           />
-        <TouchableOpacity
+        <Pressable
           style={styles.addButton}
           onPress={() => {
             setInput(addTaskHandler(input))
@@ -33,7 +33,7 @@ export default function InputComponent({addTaskHandler}) {
               style={{fontSize: 20}}
             />
           </View>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );

@@ -3,7 +3,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  Pressable
 } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
@@ -36,14 +36,14 @@ export default function TaskList({item, complete, deleteTaskHandler}) {
         }
       </View>
       <View style={styles.deleteButton}>
-        <TouchableOpacity
+        <Pressable
           onPress={() => deleteTaskHandler(item.key)}
         >
           <AntDesign
             name='delete'
             style={{fontSize: 25, color: '#9b1300'}}
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );
