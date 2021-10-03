@@ -93,3 +93,4 @@ npm start
 - [Geekforgeeks: how to add key-value pairs dynamically](https://www.geeksforgeeks.org/how-to-create-dictionary-and-add-key-value-pairs-dynamically/).
 - [Stackoverflow answer about addding text in new line](https://stackoverflow.com/a/32480141).
 - [Check item completed tutorial](https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/13-complete-items/complete-items.html).
+- [Pressable react native documentation](https://reactnative.dev/docs/pressable).
