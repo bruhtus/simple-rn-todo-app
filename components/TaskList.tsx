@@ -12,28 +12,23 @@ export default function TaskList({item, complete, deleteTaskHandler}) {
   return (
     <View style={styles.container}>
       <View style={styles.item}>
-        { complete == false ?
-          <View style={styles.completeButton}>
-            <AntDesign
-              name='right'
-              style={{ fontSize: 25, color: '#171717' }}
-            />
-          </View> :
-          <View style={styles.completeButton}>
-            <AntDesign
-              name='check'
-              style={{ fontSize: 25, color: '#006f00' }}
-            />
-          </View>
-        }
-        { complete == false ?
-          <Text>
-            {item.value}
-          </Text> :
-          <Text style={{textDecorationLine: 'line-through'}}>
-            {item.value}
-          </Text>
-        }
+        <View style={styles.completeButton}>
+          <AntDesign
+            name={!complete ? 'right' : 'check'}
+            style={!complete ?
+              {fontSize: 25, color: '#171717'} :
+              {fontSize: 25, color: '#006f00'}
+            }
+          />
+        </View>
+        <Text
+          style={!complete ?
+            null :
+            {textDecorationLine: 'line-through'}
+          }
+        >
+          {item.value}
+        </Text>
       </View>
       <View style={styles.deleteButton}>
         <Pressable

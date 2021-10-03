@@ -45,6 +45,7 @@ export default function MainScreen() {
       <FlatList
         data={data}
         ListEmptyComponent={() => <EmptyComponent />}
+        keyboardShouldPersistTaps='handled'
         renderItem={({item}) => (
           <Pressable
             onPress={() => completeTaskHandler(item.key)}
