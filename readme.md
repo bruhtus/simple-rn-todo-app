@@ -94,3 +94,5 @@ npm start
 - [Stackoverflow answer about addding text in new line](https://stackoverflow.com/a/32480141).
 - [Check item completed tutorial](https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/13-complete-items/complete-items.html).
 - [Pressable react native documentation](https://reactnative.dev/docs/pressable).
+- [FlatList inherits all props from ScrollView](https://stackoverflow.com/a/66594669).
+- [ScrollView documentation](https://reactnative.dev/docs/scrollview).
