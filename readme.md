@@ -96,3 +96,4 @@ npm start
 - [Pressable react native documentation](https://reactnative.dev/docs/pressable).
 - [FlatList inherits all props from ScrollView](https://stackoverflow.com/a/66594669).
 - [ScrollView documentation](https://reactnative.dev/docs/scrollview).
+- [Styling with conditional](https://stackoverflow.com/a/45478757).
